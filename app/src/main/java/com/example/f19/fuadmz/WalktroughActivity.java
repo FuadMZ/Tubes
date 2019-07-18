@@ -106,7 +106,7 @@ public class WalktroughActivity extends AppCompatActivity {
 
 
     private void launchHomeScreen() {
-        startActivity(new Intent(WalktroughActivity.this, HomeActivity.class));
+        startActivity(new Intent(WalktroughActivity.this, MenuActivity.class));
         finish();
     }
     //  viewpager change listener
@@ -186,5 +186,6 @@ public class WalktroughActivity extends AppCompatActivity {
             container.removeView(view);
         }
     }
+
 }
 
