@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.util.List;
 
@@ -31,8 +33,10 @@ public class BrandingAdapter extends RecyclerView.Adapter<BrandingAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull BrandingAdapter.ViewHolder viewHolder, int i) {
 
-        viewHolder.img_branding.setImageResource(brandingModels.get(i).getImage());
-        viewHolder.deskripsi_banding.setText(brandingModels.get(i).getDescription());
+        viewHolder.nama_branding.setText(brandingModels.get(i).getNama_branding());
+        viewHolder.desc_banding.setText(brandingModels.get(i).getDesc_branding());
+        Glide.with(context).load(brandingModels.get(i).getFoto_branding()).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(viewHolder.foto_branding);
 
     }
 
@@ -43,14 +47,15 @@ public class BrandingAdapter extends RecyclerView.Adapter<BrandingAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView img_branding;
-        TextView deskripsi_banding;
+        ImageView foto_branding;
+        TextView desc_banding,nama_branding;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            img_branding = itemView.findViewById(R.id.imagebranding);
-            deskripsi_banding = itemView.findViewById(R.id.desc_banding);
+            foto_branding = itemView.findViewById(R.id.imagebranding);
+            desc_banding = itemView.findViewById(R.id.desc_banding);
+            nama_branding = itemView.findViewById(R.id.nama_banding);
 
         }
     }

@@ -1,28 +1,37 @@
 package com.example.f19.fuadmz;
 
+import com.google.gson.annotations.SerializedName;
+
 public class BrandingModel {
 
-    private int image;
-    private String description;
+    @SerializedName("nama_branding")
+    private String nama_branding;
+    @SerializedName("desc_branding")
+    private String desc_branding;
+    @SerializedName("foto_branding")
+    private String foto_branding;
 
-    public BrandingModel(int image, String description) {
-        this.image = image;
-        this.description = description;
+    public String getNama_branding() {
+        return nama_branding;
     }
 
-    public int getImage() {
-        return image;
+    public void setNama_branding(String nama_branding) {
+        this.nama_branding = nama_branding;
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public String getDesc_branding() {
+        return desc_branding;
     }
 
-    public String getDescription() {
-        return description;
+    public void setDesc_branding(String desc_branding) {
+        this.desc_branding = desc_branding;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public String getFoto_branding() {
+        return foto_branding;
+    }
+
+    public void setFoto_branding(String foto_branding) {
+        this.foto_branding = foto_branding;
     }
 }
