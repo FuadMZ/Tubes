@@ -25,5 +25,9 @@ public class MenuActivity extends AppCompatActivity {
         Intent branding = new Intent(MenuActivity.this, BrandingActivity.class);
         startActivity(branding);
     }
+    public void btnComingSoon (View view){
+        Intent cs = new Intent(MenuActivity.this, ComingSonActivity.class);
+        startActivity(cs);
+    }
 
 }

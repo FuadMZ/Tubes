@@ -26,9 +26,16 @@ public class WalktroughActivity extends AppCompatActivity {
     private TextView[] dots;
     private int[] layouts;
     private Button btnSkip, btnNext;
+    private PrefManager prefManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // mengecek lauch activity - sebelum memanggil setContentView()
+        prefManager = new PrefManager(this);
+        if (!prefManager.isFirstTimeLaunch()) {
+            launchHomeScreen();
+            finish();
+        }
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
@@ -106,6 +113,7 @@ public class WalktroughActivity extends AppCompatActivity {
 
 
     private void launchHomeScreen() {
+        prefManager.setFirstTimeLaunch(false);
         startActivity(new Intent(WalktroughActivity.this, MenuActivity.class));
         finish();
     }

@@ -19,6 +19,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent splash = new Intent(SplashScreenActivity.this, WalktroughActivity.class);
+
                 startActivity(splash);
                 finish();
             }

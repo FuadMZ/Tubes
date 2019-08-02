@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -32,6 +33,7 @@ public class BrandingActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_branding);
+        ButterKnife.bind(this);
 
         gridLayoutManager = new GridLayoutManager(BrandingActivity.this, 1, GridLayoutManager.VERTICAL, false);
         rView = (RecyclerView) findViewById(R.id.rv_banding);

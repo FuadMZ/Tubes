@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">FuadMZ</string>
+    <string name="app_name">Black Cube</string>
     <string name="next">LANJUT</string>
     <string name="skip">LEWATI</string>
     <string name="start">MULAI</string>
+    <string name="title_activity_coming_soon">ComingSoonActivity</string>
+    <string name="title_activity_coming_son">ComingSonActivity</string>
 </resources>
